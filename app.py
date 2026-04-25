@@ -151,7 +151,7 @@ prev_qual_map = {
 }
 
 nationality_map = {
-    'Portuguese': 1, 'German': 2, 'Spanish': 6, 'Italian': 11,
+    'Portuguese': 1, 'German': 2, 'Spanish': 6, 'Italian': 11, 'Nigerian': 12,
     'Dutch': 13, 'English': 14, 'Lithuanian': 17, 'Angolan': 21,
     'Cape Verdean': 22, 'Guinean': 24, 'Mozambican': 25,
     'Santomean': 26, 'Turkish': 32, 'Brazilian': 41,
@@ -518,6 +518,6 @@ st.markdown("""
     <div class="footer">
         Student Academic Performance Prediction System &nbsp;|&nbsp;
         Amaraegbu Divine &nbsp;|&nbsp;
-        Department of Computer Science &nbsp;|&nbsp; 2025
+        Department of Computer Science &nbsp;|&nbsp; 2026
     </div>
 """, unsafe_allow_html=True)
