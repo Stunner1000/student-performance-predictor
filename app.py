@@ -264,7 +264,8 @@ def user_input():
    course_label = st.sidebar.selectbox(
     "Course",
     options=list(course_map.keys()),
-    index=list(course_map.keys()).index('Informatics Engineering (closest to Computer Science)'))
+    index=list(course_map.keys()).index('Informatics Engineering (closest to Computer Science)')
+   )
     course = course_map[course_label]
     st.sidebar.caption("ℹ️ This dataset is sourced from Portuguese higher education institutions. Select the course closest to your student's field of study.")
 
