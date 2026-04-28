@@ -284,40 +284,40 @@ def user_input():
     st.sidebar.markdown("**📊 1st Semester Performance**")
     st.sidebar.info(
         "ℹ️ **1st Semester fields explained:**\n"
-        "- **Units Credited:** Curricular units given credit (e.g. from prior learning)\n"
-        "- **Units Enrolled:** Total units the student registered for\n"
-        "- **Units Evaluated:** Units the student actually sat for assessment\n"
-        "- **Units Approved:** Units the student successfully passed\n"
-        "- **Average Grade:** Mean grade across all units (max: 20)\n"
-        "- **Without Evaluations:** Units enrolled in but never assessed"
+        "- **Courses Credited:** Courses given credit (e.g. from prior learning)\n"
+        "- **Courses Enrolled:** Total courses the student registered for\n"
+        "- **Courses Evaluated:** Courses the student actually sat for assessment\n"
+        "- **Courses Approved:** Courses the student successfully passed\n"
+        "- **Average Grade:** Mean grade across all courses (max: 20)\n"
+        "- **Without Evaluations:** Courses enrolled in but never assessed"
     )
-    cu1_credited = st.sidebar.number_input("Units Credited", 0, 20, 0, key="cu1c")
-    cu1_enrolled = st.sidebar.number_input("Units Enrolled", 0, 26, 6, key="cu1e")
-    cu1_evals = st.sidebar.number_input("Units Evaluated", 0, 45, 6, key="cu1ev")
-    cu1_approved = st.sidebar.number_input("Units Approved", 0, 26, 5, key="cu1a")
+    cu1_credited = st.sidebar.number_input("Courses Credited", 0, 20, 0, key="cu1c")
+    cu1_enrolled = st.sidebar.number_input("Courses Enrolled", 0, 26, 6, key="cu1e")
+    cu1_evals = st.sidebar.number_input("Courses Evaluated", 0, 45, 6, key="cu1ev")
+    cu1_approved = st.sidebar.number_input("Courses Approved", 0, 26, 5, key="cu1a")
     cu1_grade = st.sidebar.number_input(
         "Average Grade (max: 20)", 0.0, 20.0, 12.0, key="cu1g",
         help="Average grade in the 1st semester. Maximum value is 20.")
-    cu1_no_eval = st.sidebar.number_input("Without Evaluations", 0, 12, 0, key="cu1n")
+    cu1_no_eval = st.sidebar.number_input("Courses Without Evaluations", 0, 12, 0, key="cu1n")
 
     st.sidebar.markdown("**📊 2nd Semester Performance**")
     st.sidebar.info(
         "ℹ️ **2nd Semester fields explained:**\n"
-        "- **Units Credited:** Curricular units given credit in 2nd semester\n"
-        "- **Units Enrolled:** Total units registered for in 2nd semester\n"
-        "- **Units Evaluated:** Units assessed in 2nd semester\n"
-        "- **Units Approved:** Units successfully passed in 2nd semester\n"
-        "- **Average Grade:** Mean grade across 2nd semester units (max: 20)\n"
+        "- **Courses Credited:** Courses given credit in 2nd semester\n"
+        "- **Courses Enrolled:** Total courses registered for in 2nd semester\n"
+        "- **Courses Evaluated:** Courses assessed in 2nd semester\n"
+        "- **Courses Approved:** Courses successfully passed in 2nd semester\n"
+        "- **Average Grade:** Mean grade across 2nd semester courses (max: 20)\n"
         "- **Without Evaluations:** Units enrolled but never assessed in 2nd semester"
     )
-    cu2_credited = st.sidebar.number_input("Units Credited", 0, 20, 0, key="cu2c")
-    cu2_enrolled = st.sidebar.number_input("Units Enrolled", 0, 23, 6, key="cu2e")
-    cu2_evals = st.sidebar.number_input("Units Evaluated", 0, 45, 6, key="cu2ev")
-    cu2_approved = st.sidebar.number_input("Units Approved", 0, 20, 5, key="cu2a")
+    cu2_credited = st.sidebar.number_input("Courses Credited", 0, 20, 0, key="cu2c")
+    cu2_enrolled = st.sidebar.number_input("Courses Enrolled", 0, 23, 6, key="cu2e")
+    cu2_evals = st.sidebar.number_input("Courses Evaluated", 0, 45, 6, key="cu2ev")
+    cu2_approved = st.sidebar.number_input("Courses Approved", 0, 20, 5, key="cu2a")
     cu2_grade = st.sidebar.number_input(
         "Average Grade (max: 20)", 0.0, 20.0, 12.0, key="cu2g",
         help="Average grade in the 2nd semester. Maximum value is 20.")
-    cu2_no_eval = st.sidebar.number_input("Without Evaluations", 0, 12, 0, key="cu2n")
+    cu2_no_eval = st.sidebar.number_input("Courses Without Evaluations", 0, 12, 0, key="cu2n")
 
     st.sidebar.markdown("**👤 Demographic Information**")
     age = st.sidebar.number_input("Age at Enrollment", 17, 70, 20)
