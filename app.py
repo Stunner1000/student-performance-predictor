@@ -117,7 +117,7 @@ course_map = {
     'Agronomy': 9003,
     'Communication Design': 9070,
     'Veterinary Nursing': 9085,
-    'Informatics Engineering': 9119,
+    'Informatics Engineering (closest to Computer Science)': 9119,
     'Equiniculture': 9130,
     'Management': 9147,
     'Social Service': 9238,
@@ -262,8 +262,12 @@ def user_input():
         help="Admission grade at enrollment. Maximum value is 200.")
 
     course_label = st.sidebar.selectbox(
-        "Course", options=list(course_map.keys()))
+    "Course",
+    options=list(course_map.keys()),
+    index=list(course_map.keys()).index('Informatics Engineering (closest to Computer Science')
+    )
     course = course_map[course_label]
+    st.sidebar.caption("ℹ️ This dataset is sourced from Portuguese higher education institutions. Select the course closest to your student's field of study.")
 
     app_mode_label = st.sidebar.selectbox(
         "Application Mode", options=list(application_mode_map.keys()))
@@ -493,24 +497,40 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown('<p class="section-header">📈 Model Performance & Insights</p>',
             unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
-with col1:
-    if os.path.exists('model_comparison.png'):
+# ── Row 1: Model Comparison ──
+st.markdown("#### 📊 Model Performance Comparison")
+if os.path.exists('model_comparison.png'):
+    col1, col2, col3 = st.columns([1, 3, 1])
+    with col2:
         st.image('model_comparison.png',
-                 caption='Model Performance Comparison', width=600)
-    else:
-        st.warning("Run Step 5 to generate model_comparison.png")
+                 caption='Model Performance Comparison',
+                 use_container_width=True)
+else:
+    st.warning("Run Step 5 to generate model_comparison.png")
 
-with col2:
-    if os.path.exists('confusion_matrix.png'):
+st.markdown("<br>", unsafe_allow_html=True)
+
+# ── Row 2: Confusion Matrix ──
+st.markdown("#### 🔲 Confusion Matrix")
+if os.path.exists('confusion_matrix.png'):
+    col1, col2, col3 = st.columns([1, 3, 1])
+    with col2:
         st.image('confusion_matrix.png',
-                 caption='Confusion Matrix', width=600)
-    else:
-        st.warning("Run Step 5 to generate confusion_matrix.png")
+                 caption='Confusion Matrix (Best Model)',
+                 use_container_width=True)
+else:
+    st.warning("Run Step 5 to generate confusion_matrix.png")
 
+st.markdown("<br>", unsafe_allow_html=True)
+
+# ── Row 3: Feature Importance ──
+st.markdown("#### 🏆 Top 15 Feature Importances")
 if os.path.exists('feature_importance.png'):
-    st.image('feature_importance.png',
-             caption='Top 15 Feature Importances', width=900)
+    col1, col2, col3 = st.columns([0.5, 4, 0.5])
+    with col2:
+        st.image('feature_importance.png',
+                 caption='Top 15 Most Important Features (Best Model)',
+                 use_container_width=True)
 else:
     st.warning("Run Step 5 to generate feature_importance.png")
 
